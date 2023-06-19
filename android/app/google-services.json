@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "475618118490",
+    "project_id": "absensi-app-92aa3",
+    "storage_bucket": "absensi-app-92aa3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475618118490:android:0de9bed78d95ecc235c163",
+        "android_client_info": {
+          "package_name": "com.alifbbq.presence_apps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475618118490-e10ojue3mjksnbi6nspqinshu9l3vtqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxHqwBspHpHEdX5NBvf4qps5NYeLbvdrA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475618118490-e10ojue3mjksnbi6nspqinshu9l3vtqe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "475618118490-ashitg7csmu8uv0gj7vu4kqset9ujbbb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.presenceApp.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475618118490:android:ddd3141e6ba85e5735c163",
+        "android_client_info": {
+          "package_name": "com.example.absence_apps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475618118490-e10ojue3mjksnbi6nspqinshu9l3vtqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxHqwBspHpHEdX5NBvf4qps5NYeLbvdrA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475618118490-e10ojue3mjksnbi6nspqinshu9l3vtqe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "475618118490-ashitg7csmu8uv0gj7vu4kqset9ujbbb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.presenceApp.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475618118490:android:41dd5b3ce3f9fb4035c163",
+        "android_client_info": {
+          "package_name": "com.mieayam.presence"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475618118490-e10ojue3mjksnbi6nspqinshu9l3vtqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxHqwBspHpHEdX5NBvf4qps5NYeLbvdrA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475618118490-e10ojue3mjksnbi6nspqinshu9l3vtqe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "475618118490-ashitg7csmu8uv0gj7vu4kqset9ujbbb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.presenceApp.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
