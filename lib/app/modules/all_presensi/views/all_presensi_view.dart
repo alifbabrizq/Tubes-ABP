@@ -12,6 +12,7 @@ class AllPresensiView extends GetView<AllPresensiController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff090580),
         title: Text('SEMUA PRESENSI'),
         centerTitle: true,
       ),

@@ -15,41 +15,13 @@ class UpdateProfileView extends GetView<UpdateProfileController> {
     controller.emailC.text = user["email"];
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff090580),
         title: const Text('UPDATE PROFILE'),
         centerTitle: true,
       ),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          TextField(
-            readOnly: true,
-            autocorrect: false,
-            controller: controller.nipC,
-            decoration: const InputDecoration(
-              labelText: "NIP",
-              border: OutlineInputBorder(),
-            ),
-          ),
-          const SizedBox(height: 20),
-          TextField(
-            readOnly: true,
-            autocorrect: false,
-            controller: controller.emailC,
-            decoration: const InputDecoration(
-              labelText: "Email",
-              border: OutlineInputBorder(),
-            ),
-          ),
-          const SizedBox(height: 20),
-          TextField(
-            autocorrect: false,
-            controller: controller.nameC,
-            decoration: const InputDecoration(
-              labelText: "Name",
-              border: OutlineInputBorder(),
-            ),
-          ),
-          const SizedBox(height: 25),
           const Text(
             "Photo Profile",
             style: TextStyle(
@@ -109,9 +81,49 @@ class UpdateProfileView extends GetView<UpdateProfileController> {
               ),
             ],
           ),
+          const SizedBox(height: 20),
+          
+          TextField(
+            readOnly: true,
+            autocorrect: false,
+            controller: controller.nipC,
+            decoration: InputDecoration(
+              labelText: "NIP",
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          TextField(
+            readOnly: true,
+            autocorrect: false,
+            controller: controller.emailC,
+            decoration: InputDecoration(
+              labelText: "Email",
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          TextField(
+            autocorrect: false,
+            controller: controller.nameC,
+            decoration: InputDecoration(
+              labelText: "Name",
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+          ),
+          
           const SizedBox(height: 30),
           Obx(
             () => ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color(0xff090580)),
+              ),
               onPressed: () async {
                 if (controller.isLoading.isFalse) {
                   await controller.updateProfile(user["uid"]);

@@ -100,9 +100,11 @@ class AddPegawaiController extends GetxController {
               controller: passAdminC,
               autocorrect: false,
               obscureText: true,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 labelText: "Password",
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
               ),
             ),
           ],
@@ -117,6 +119,9 @@ class AddPegawaiController extends GetxController {
           ),
           Obx(
             () => ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color(0xff090580)),
+              ),
               onPressed: () async {
                 if (isLoadingAddPegawai.isFalse) {
                   await prosesAddPegawai();

@@ -13,6 +13,7 @@ class ProfileView extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         backgroundColor: Color(0xff090580),
         title: Text('PROFILE'),
         centerTitle: true,
       ),
@@ -97,7 +98,8 @@ class ProfileView extends GetView<ProfileController> {
           }
         },
       ),
-      bottomNavigationBar: ConvexAppBar(
+       bottomNavigationBar: ConvexAppBar(
+        backgroundColor: Color(0xff090580),
         style: TabStyle.fixedCircle,
         items: [
           TabItem(icon: Icons.home, title: 'Home'),

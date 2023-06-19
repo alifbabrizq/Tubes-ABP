@@ -15,6 +15,7 @@ class DetailPresensiView extends GetView<DetailPresensiController> {
     print(data);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff090580),
         title: const Text('DETAIL PRESENSI'),
         centerTitle: true,
       ),

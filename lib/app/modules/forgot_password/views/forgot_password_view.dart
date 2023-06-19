@@ -10,7 +10,8 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ForgotPasswordView'),
+        backgroundColor: Color(0xff090580),
+        title: const Text('FORGOT PASSWORD'),
         centerTitle: true,
       ),
       body: ListView(
@@ -21,13 +22,17 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
             controller: controller.emailC,
             decoration: InputDecoration(
               labelText: "Email",
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
             ),
           ),
           SizedBox(height: 20),
           Obx(
             () => ElevatedButton(
-              onPressed: () {
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color(0xff090580)),
+              ),              onPressed: () {
                 if (controller.isLoading.isFalse) {
                   controller.sendEmail();
                 }

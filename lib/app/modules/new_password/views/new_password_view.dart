@@ -22,7 +22,9 @@ class NewPasswordView extends GetView<NewPasswordController> {
             controller: controller.newPassC,
             decoration: InputDecoration(
               labelText: "New Password",
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
             ),
           ),
           SizedBox(height: 20),

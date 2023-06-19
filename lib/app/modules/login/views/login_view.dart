@@ -9,19 +9,30 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('LOGIN'),
-        centerTitle: true,
-      ),
       body: ListView(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(24),
         children: [
+          SizedBox(height: 150,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: Text("Login👋", style: TextStyle(
+                  fontSize: 32, 
+                  fontWeight: FontWeight.bold, 
+                  color: Color(0xff090580) ),),
+              ),
+            ],
+          ),
+          SizedBox(height: 30,),
           TextField(
             autocorrect: false,
             controller: controller.emailC,
             decoration: InputDecoration(
               labelText: "Email",
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
             ),
           ),
           SizedBox(height: 20),
@@ -31,12 +42,18 @@ class LoginView extends GetView<LoginController> {
             obscureText: true,
             decoration: InputDecoration(
               labelText: "Password",
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
             ),
           ),
           SizedBox(height: 20),
           Obx(
             () => ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color(0xff090580)),
+              ),
+
               onPressed: () async {
                 if (controller.isLoading.isFalse) {
                   await controller.login();
@@ -48,7 +65,7 @@ class LoginView extends GetView<LoginController> {
           ),
           TextButton(
             onPressed: () => Get.toNamed(Routes.FORGOT_PASSWORD),
-            child: Text("Lupa password ?"),
+            child: Text("Lupa password ?", style: TextStyle(color: Colors.grey),),
           ),
         ],
       ),

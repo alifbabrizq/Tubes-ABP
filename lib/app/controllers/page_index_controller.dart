@@ -33,9 +33,9 @@ class PageIndexController extends GetxController {
           // presensi
           await presensi(position, address, distance);
 
-          // Get.snackbar("Berhasil", "Kamu telah mengisi daftar hadir");
+          // Get.snackbar("Success!", "Kamu telah mengisi daftar hadir");
         } else {
-          Get.snackbar("Terjadi Kesalahan", dataResponse["message"]);
+          Get.snackbar("Something Wrong!", dataResponse["message"]);
         }
         break;
       case 2:
@@ -70,9 +70,9 @@ class PageIndexController extends GetxController {
       // belum pernah absen & set absen masuk pertama kalinya
 
       await Get.defaultDialog(
-        title: "Validasi Presensi",
+        title: "Attendance validation",
         middleText:
-            "Apakah kamu yakin akan mengisi daftar hadir ( MASUK ) sekarang ?",
+            "Are you sure you want to fill in the attendance (check-in) now?`",
         actions: [
           OutlinedButton(
             onPressed: () => Get.back(),
@@ -93,7 +93,7 @@ class PageIndexController extends GetxController {
               });
               Get.back();
               Get.snackbar(
-                  "Berhasil", "Kamu telah mengisi daftar hadir (MASUK)");
+                  "Success!", "You have successfully filled in the attendance (check-in)");
             },
             child: const Text("YES"),
           ),
@@ -109,14 +109,14 @@ class PageIndexController extends GetxController {
         Map<String, dynamic>? dataPresenceToday = todayDoc.data();
         if (dataPresenceToday?["keluar"] != null) {
           // sudah absen masuk & keluar
-          Get.snackbar("Informasi Penting",
-              "Kamu telah absen masuk & keluar. Tidak dapat mengubah data kembali.");
+          Get.snackbar("Important Information",
+              "You have already checked in and checked out. The data cannot be changed");
         } else {
           // absen keluar
           await Get.defaultDialog(
-            title: "Validasi Presensi",
+            title: "Attendance validation",
             middleText:
-                "Apakah kamu yakin akan mengisi daftar hadir ( KELUAR ) sekarang ?",
+                "Are you sure you want to fill in the attendance (check-out) now?",
             actions: [
               OutlinedButton(
                 onPressed: () => Get.back(),
@@ -136,7 +136,7 @@ class PageIndexController extends GetxController {
                   });
                   Get.back();
                   Get.snackbar(
-                      "Berhasil", "Kamu telah mengisi daftar hadir (KELUAR)");
+                      "Success!", "You have successfully filled in the attendance (check-out)");
                 },
                 child: const Text("YES"),
               ),
@@ -146,9 +146,9 @@ class PageIndexController extends GetxController {
       } else {
         // absen masuk
         await Get.defaultDialog(
-          title: "Validasi Presensi",
+          title: "Attendance validation",
           middleText:
-              "Apakah kamu yakin akan mengisi daftar hadir ( MASUK ) sekarang ?",
+              "Are you sure you want to fill in the attendance (check-in) now?",
           actions: [
             OutlinedButton(
               onPressed: () => Get.back(),
@@ -169,7 +169,7 @@ class PageIndexController extends GetxController {
                 });
                 Get.back();
                 Get.snackbar(
-                    "Berhasil", "Kamu telah mengisi daftar hadir (MASUK)");
+                    "Success!", "You have successfully filled in the attendance (check-in)");
               },
               child: const Text("YES"),
             ),
@@ -203,7 +203,7 @@ class PageIndexController extends GetxController {
       // App to enable the location services.
       // return Future.error('Location services are disabled.');
       return {
-        "message": "Tidak dapat mengambil GPS dari device ini.",
+        "message": "Unable to retrieve GPS from this device",
         "error": true,
       };
     }
@@ -219,7 +219,7 @@ class PageIndexController extends GetxController {
         // your App should show an explanatory UI now.
         // return Future.error('Location permissions are denied');
         return {
-          "message": "Izin menggunakan GPS ditolak.",
+          "message": "Permission to use GPS has been denied",
           "error": true,
         };
       }
@@ -229,7 +229,7 @@ class PageIndexController extends GetxController {
       // Permissions are denied forever, handle appropriately.
       return {
         "message":
-            "Settingan hp kamu tidak memperbolehkan untuk mengakses GPS. Ubah pada settingan hp kamu.",
+            "Your phone settings do not allow access to GPS. Please change the settings on your phone",
         "error": true,
       };
       // return Future.error('Location permissions are permanently denied, we cannot request permissions.');
@@ -240,7 +240,7 @@ class PageIndexController extends GetxController {
     Position position = await Geolocator.getCurrentPosition();
     return {
       "position": position,
-      "message": "Berhasil mendapatkan posisi device.",
+      "message": "Success! retrieved the device's location",
       "error": false,
     };
   }

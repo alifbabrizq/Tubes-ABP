@@ -11,6 +11,7 @@ class AddPegawaiView extends GetView<AddPegawaiController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff090580),
         title: const Text('ADD PEGAWAI'),
         centerTitle: true,
       ),
@@ -20,41 +21,52 @@ class AddPegawaiView extends GetView<AddPegawaiController> {
           TextField(
             autocorrect: false,
             controller: controller.nipC,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: "NIP",
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
             ),
           ),
           const SizedBox(height: 20),
           TextField(
             autocorrect: false,
             controller: controller.nameC,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: "Name",
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
             ),
           ),
           const SizedBox(height: 20),
           TextField(
             autocorrect: false,
             controller: controller.jobC,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: "Job",
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
             ),
           ),
           const SizedBox(height: 20),
           TextField(
             autocorrect: false,
             controller: controller.emailC,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: "Email",
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
             ),
           ),
           const SizedBox(height: 30),
           Obx(
             () => ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color(0xff090580)),
+              ),
               onPressed: () async {
                 if (controller.isLoading.isFalse) {
                   await controller.addPegawai();

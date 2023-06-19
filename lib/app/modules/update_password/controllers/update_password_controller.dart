@@ -29,8 +29,8 @@ class UpdatePasswordController extends GetxController {
           Get.snackbar("Success", "password successfully updated");
         } on FirebaseAuthException catch (e) {
           if (e.code == "wrong-password") {
-            Get.snackbar("Terjadi Kesalahan",
-                "Password yang dimasukan salah. update password failed.");
+            Get.snackbar("Something Wrong!",
+                "The password entered is incorrect. Failed to update the password");
           } else {
             Get.snackbar("Something Wrong!", e.code.toLowerCase());
           }

@@ -10,6 +10,7 @@ class UpdatePasswordView extends GetView<UpdatePasswordController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         backgroundColor: Color(0xff090580),
         title: const Text('UPDATE PASSWORD'),
         centerTitle: true,
       ),
@@ -20,9 +21,11 @@ class UpdatePasswordView extends GetView<UpdatePasswordController> {
             controller: controller.currC,
             autocorrect: false,
             obscureText: true,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: "Current Password",
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
             ),
           ),
           const SizedBox(height: 10),
@@ -30,9 +33,11 @@ class UpdatePasswordView extends GetView<UpdatePasswordController> {
             controller: controller.newC,
             autocorrect: false,
             obscureText: true,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: "New Password",
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
             ),
           ),
           const SizedBox(height: 10),
@@ -40,14 +45,19 @@ class UpdatePasswordView extends GetView<UpdatePasswordController> {
             controller: controller.confirmC,
             autocorrect: false,
             obscureText: true,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: "Confirm New Password",
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
             ),
           ),
           const SizedBox(height: 10),
           Obx(
             () => ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color(0xff090580)),
+              ),
               onPressed: () {
                 if (controller.isLoading.isFalse) {
                   controller.updatePass();
