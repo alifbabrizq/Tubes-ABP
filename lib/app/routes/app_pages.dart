@@ -1,4 +1,8 @@
 import 'package:get/get.dart';
+import 'package:presence_apps/app/modules/all_presensi/bindings/all_presensi_binding.dart';
+import 'package:presence_apps/app/modules/all_presensi/views/all_presensi_view.dart';
+import 'package:presence_apps/app/modules/detail_presensi/bindings/detail_presensi_binding.dart';
+import 'package:presence_apps/app/modules/detail_presensi/views/detail_presensi_view.dart';
 
 import '../modules/add_pegawai/bindings/add_pegawai_binding.dart';
 import '../modules/add_pegawai/views/add_pegawai_view.dart';
@@ -29,6 +33,7 @@ class AppPages {
       name: _Paths.HOME,
       page: () => HomeView(),
       binding: HomeBinding(),
+      transition: Transition.fadeIn,
     ),
     GetPage(
       name: _Paths.ADD_PEGAWAI,
@@ -52,8 +57,9 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PROFILE,
-      page: () => const ProfileView(),
+      page: () => ProfileView(),
       binding: ProfileBinding(),
+      transition: Transition.fadeIn,
     ),
     GetPage(
       name: _Paths.UPDATE_PROFILE,
@@ -64,6 +70,16 @@ class AppPages {
       name: _Paths.UPDATE_PASSWORD,
       page: () => const UpdatePasswordView(),
       binding: UpdatePasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_PRESENSI,
+      page: () => DetailPresensiView(),
+      binding: DetailPresensiBinding(),
+    ),
+    GetPage(
+      name: _Paths.ALL_PRESENSI,
+      page: () => AllPresensiView(),
+      binding: AllPresensiBinding(),
     ),
   ];
 }

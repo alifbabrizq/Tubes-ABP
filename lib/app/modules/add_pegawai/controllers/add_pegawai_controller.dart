@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AddPegawaiController extends GetxController {
-  //TODO: Implement AddPegawaiController
   RxBool isLoading = false.obs;
   RxBool isLoadingAddPegawai = false.obs;
   TextEditingController nameC = TextEditingController();
+  TextEditingController jobC = TextEditingController();
   TextEditingController nipC = TextEditingController();
   TextEditingController emailC = TextEditingController();
   TextEditingController passAdminC = TextEditingController();
@@ -40,6 +40,7 @@ class AddPegawaiController extends GetxController {
             "nip": nipC.text,
             "name": nameC.text,
             "email": emailC.text,
+            "job": jobC.text,
             "uid": uid,
             "role": "pegawai",
             "createdAt": DateTime.now().toIso8601String(),
@@ -70,7 +71,7 @@ class AddPegawaiController extends GetxController {
           Get.snackbar(
               "Something Wrong!", "can't login, incorrect credentials");
         } else {
-          Get.snackbar("Something Wrong!", "${e.code}");
+          Get.snackbar("Something Wrong!", e.code);
         }
       } catch (e) {
         isLoadingAddPegawai.value = false;
@@ -85,6 +86,7 @@ class AddPegawaiController extends GetxController {
 
   Future<void> addPegawai() async {
     if (nameC.text.isNotEmpty &&
+        jobC.text.isNotEmpty &&
         nipC.text.isNotEmpty &&
         emailC.text.isNotEmpty) {
       isLoading.value = true;
@@ -92,13 +94,13 @@ class AddPegawaiController extends GetxController {
         title: "Admin Validation",
         content: Column(
           children: [
-            Text("Enter admin password"),
-            SizedBox(height: 10),
+            const Text("Enter admin password"),
+            const SizedBox(height: 10),
             TextField(
               controller: passAdminC,
               autocorrect: false,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Password",
                 border: OutlineInputBorder(),
               ),
@@ -111,7 +113,7 @@ class AddPegawaiController extends GetxController {
               isLoading.value = false;
               Get.back();
             },
-            child: Text("CANCEL"),
+            child: const Text("CANCEL"),
           ),
           Obx(
             () => ElevatedButton(

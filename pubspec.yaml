@@ -2,24 +2,29 @@ name: presence_apps
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment: 
-  sdk: '>=3.0.5 <4.0.0'
+environment:
+  sdk: ">=3.0.5 <4.0.0"
 
-dependencies: 
+dependencies:
   get: 4.6.1
   cupertino_icons: ^1.0.2
   firebase_core: 2.14.0
   firebase_auth: 4.6.3
   cloud_firestore: 4.8.1
   firebase_storage: 11.2.3
-  flutter: 
+  image_picker: ^0.8.9
+  convex_bottom_bar: ^3.2.0
+  intl: ^0.18.1
+  geolocator: ^9.0.2
+  geocoding: ^2.1.0
+  syncfusion_flutter_datepicker: ^21.2.10
+  flutter:
     sdk: flutter
 
-dev_dependencies: 
+dev_dependencies:
   flutter_lints: ^2.0.0
-  flutter_test: 
+  flutter_test:
     sdk: flutter
 
-flutter: 
+flutter:
   uses-material-design: true
-
